@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-google-blue: #1a73e8;
+  --color-light-gray: #f8f9fa;
+  --font-sans: "Inter", sans-serif;
+}
