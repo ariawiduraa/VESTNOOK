@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/VESTNOOK-v2.0-4CAF50?style=for-the-badge&logo=leaf&logoColor=white" alt="VESTNOOK">
+  <img src="https://img.shields.io/badge/VESTNOOK-Smart_Farming-4CAF50?style=for-the-badge&logo=leaf&logoColor=white" alt="VESTNOOK">
   <img src="https://img.shields.io/badge/Laravel-13.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
   <img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/AI_Powered-Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI">
@@ -13,20 +13,21 @@
 
 ---
 
-## 📋 Daftar Isi
+## Daftar Isi
 
-- [Tentang Proyek](#-tentang-proyek)
-- [Fitur Utama](#-fitur-utama)
-- [Tech Stack](#-tech-stack)
-- [Prasyarat Sistem](#-prasyarat-sistem)
-- [Instalasi](#-instalasi)
-- [Menjalankan Aplikasi](#-menjalankan-aplikasi)
-- [Panduan Penggunaan](#-panduan-penggunaan)
-- [Struktur Proyek](#-struktur-proyek)
+- [Tentang Proyek](#tentang-proyek)
+- [Fitur Utama](#fitur-utama)
+- [Tech Stack](#tech-stack)
+- [Prasyarat Sistem](#prasyarat-sistem)
+- [Instalasi](#instalasi)
+- [Menjalankan Aplikasi](#menjalankan-aplikasi)
+- [Panduan Penggunaan](#panduan-penggunaan)
+- [Struktur Proyek](#struktur-proyek)
+- [Lisensi](#lisensi)
 
 ---
 
-## 🌿 Tentang Proyek
+## Tentang Proyek
 
 **VESTNOOK** adalah aplikasi web *Smart Farming* yang mengintegrasikan teknologi Machine Learning (K-Means Clustering & Random Forest) dengan kecerdasan buatan Google Gemini untuk memberikan:
 
@@ -37,23 +38,23 @@
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
 | Fitur | Deskripsi |
 |---|---|
-| 🔐 **Autentikasi** | Registrasi, login, edit profil, dan manajemen akun |
-| 🗺️ **Dashboard Lahan** | Tampilan ringkasan semua lahan dengan status analisis |
-| 🧪 **Analisis Parameter** | Input 13+ parameter tanah (pH, NPK, kelembapan, dll.) |
-| 🤖 **ML Engine** | K-Means Clustering + Random Forest untuk zonasi & rekomendasi pupuk |
-| 🌐 **Analisis AI Gemini** | Penjelasan kondisi tanah mendalam dari Google Gemini |
-| 📅 **Kalender Pemupukan** | Jadwal 8 minggu berbasis AI dengan fitur checklist |
-| ⚖️ **Bandingkan Lahan** | Komparasi dua lahan + analisis AI secara berdampingan |
-| 🎨 **Dark/Light Mode** | Tema gelap dan terang yang dapat diubah sewaktu-waktu |
-| 🌏 **Multi-bahasa** | Antarmuka tersedia dalam Bahasa Indonesia dan Inggris |
+| **Autentikasi** | Registrasi, login, edit profil, dan manajemen akun |
+| **Dashboard Lahan** | Tampilan ringkasan semua lahan dengan status analisis |
+| **Analisis Parameter** | Input 13+ parameter tanah (pH, NPK, kelembapan, dll.) |
+| **ML Engine** | K-Means Clustering + Random Forest untuk zonasi & rekomendasi pupuk |
+| **Analisis AI Gemini** | Penjelasan kondisi tanah mendalam dari Google Gemini |
+| **Kalender Pemupukan** | Jadwal 8 minggu berbasis AI dengan fitur checklist |
+| **Bandingkan Lahan** | Komparasi dua lahan + analisis AI secara berdampingan |
+| **Dark/Light Mode** | Tema gelap dan terang yang dapat diubah sewaktu-waktu |
+| **Multi-bahasa** | Antarmuka tersedia dalam Bahasa Indonesia dan Inggris |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Teknologi |
 |---|---|
@@ -66,7 +67,7 @@
 
 ---
 
-## ⚙️ Prasyarat Sistem
+## Prasyarat Sistem
 
 Pastikan semua perangkat lunak berikut sudah terinstal di sistem Anda sebelum memulai:
 
@@ -84,39 +85,20 @@ Pastikan semua perangkat lunak berikut sudah terinstal di sistem Anda sebelum me
 
 ---
 
-## 🚀 Instalasi
+## Instalasi
 
-Ikuti langkah-langkah berikut secara berurutan untuk menyiapkan proyek. Setiap langkah mencakup perintah untuk **Windows**, **macOS**, dan **Linux**.
+Ikuti langkah-langkah berikut secara berurutan. Langkah 1 berlaku untuk semua sistem operasi, sedangkan langkah selanjutnya menyertakan perintah khusus untuk **Windows**, **macOS**, dan **Linux**.
 
 ---
 
 ### Langkah 1 — Clone Repositori
 
-> Jika Anda sudah memiliki folder proyeknya, lewati bagian clone dan langsung masuk ke direktori proyek.
-
-**🪟 Windows (Command Prompt / PowerShell):**
-```powershell
-git clone <URL_REPOSITORI_ANDA> vestnook-v2
-cd vestnook-v2
-```
-
-**🍎 macOS / 🐧 Linux (Terminal):**
 ```bash
-git clone <URL_REPOSITORI_ANDA> vestnook-v2
-cd vestnook-v2
+git clone <URL_REPOSITORI_ANDA> vestnook
+cd vestnook
 ```
 
-Jika folder sudah ada, masuk langsung ke direktorinya:
-
-**🪟 Windows:**
-```powershell
-cd "C:\path\ke\folder\VESTNOOK"
-```
-
-**🍎 macOS / 🐧 Linux:**
-```bash
-cd "/path/ke/folder/VESTNOOK"
-```
+> Jika sudah memiliki folder proyeknya, cukup masuk ke direktori tersebut dan lewati langkah ini.
 
 ---
 
@@ -139,12 +121,12 @@ composer install
 
 Salin file environment contoh:
 
-**🪟 Windows (Command Prompt):**
+**Windows (Command Prompt):**
 ```cmd
 copy .env.example .env
 ```
 
-**🍎 macOS / 🐧 Linux:**
+**macOS / Linux:**
 ```bash
 cp .env.example .env
 ```
@@ -160,7 +142,7 @@ APP_URL=http://localhost:8000
 # Database (SQLite — bawaan, tidak perlu diubah)
 DB_CONNECTION=sqlite
 
-# ⬇️ WAJIB DIISI — API Key Google Gemini Anda
+# WAJIB DIISI — API Key Google Gemini Anda
 GEMINI_API_KEY="MASUKKAN_API_KEY_GEMINI_ANDA_DI_SINI"
 ```
 
@@ -185,19 +167,19 @@ php artisan key:generate
 
 Buat file database SQLite kosong, lalu jalankan migrasi:
 
-**🪟 Windows (Command Prompt):**
+**Windows (Command Prompt):**
 ```cmd
 type nul > database\database.sqlite
 php artisan migrate
 ```
 
-**🪟 Windows (PowerShell):**
+**Windows (PowerShell):**
 ```powershell
 New-Item -Path database\database.sqlite -ItemType File -Force
 php artisan migrate
 ```
 
-**🍎 macOS / 🐧 Linux:**
+**macOS / Linux:**
 ```bash
 touch database/database.sqlite
 php artisan migrate
@@ -222,14 +204,14 @@ npm run build
 
 Masuk ke folder ML Engine dan instal library yang dibutuhkan:
 
-**🪟 Windows (Command Prompt / PowerShell):**
+**Windows (Command Prompt / PowerShell):**
 ```cmd
 cd ml_engine
 pip install joblib pandas numpy scikit-learn
 cd ..
 ```
 
-**🍎 macOS / 🐧 Linux:**
+**macOS / Linux:**
 ```bash
 cd ml_engine
 pip3 install joblib pandas numpy scikit-learn
@@ -245,30 +227,30 @@ Pastikan file model berikut sudah ada di dalam folder `ml_engine/`:
 
 ```
 ml_engine/
-├── kmeans_smart_farming.joblib           ✅ Model K-Means Clustering
-├── scaler_smart_farming.joblib           ✅ Scaler untuk K-Means
-├── cluster_label_map.joblib              ✅ Peta label cluster
-├── preprocessor_smart_farming_v2.joblib  ✅ Preprocessor untuk Random Forest
-├── random_forest_model.joblib            ✅ Model Random Forest
-└── label_encoder_target_v2.joblib        ✅ Label encoder target
+├── kmeans_smart_farming.joblib           Model K-Means Clustering
+├── scaler_smart_farming.joblib           Scaler untuk K-Means
+├── cluster_label_map.joblib              Peta label cluster
+├── preprocessor_smart_farming_v2.joblib  Preprocessor untuk Random Forest
+├── random_forest_model.joblib            Model Random Forest
+└── label_encoder_target_v2.joblib        Label encoder target
 ```
 
 > **Jika file model belum ada**, jalankan skrip pelatihan:
 >
-> *Windows:*
+> Windows:
 > ```cmd
 > cd ml_engine && python train.py && cd ..
 > ```
-> *macOS / Linux:*
+> macOS / Linux:
 > ```bash
 > cd ml_engine && python3 train.py && cd ..
 > ```
 
 ---
 
-### ✅ Ringkasan Perintah Instalasi
+### Ringkasan Perintah Instalasi
 
-**🪟 Windows (Command Prompt):**
+**Windows (Command Prompt):**
 ```cmd
 copy .env.example .env
 composer install
@@ -280,7 +262,7 @@ npm run build
 cd ml_engine && pip install joblib pandas numpy scikit-learn && cd ..
 ```
 
-**🍎 macOS / 🐧 Linux:**
+**macOS / Linux:**
 ```bash
 cp .env.example .env
 composer install
@@ -294,9 +276,9 @@ cd ml_engine && pip3 install joblib pandas numpy scikit-learn && cd ..
 
 ---
 
-## ▶️ Menjalankan Aplikasi
+## Menjalankan Aplikasi
 
-Setelah instalasi selesai, jalankan server menggunakan **salah satu** cara berikut:
+Setelah instalasi selesai, jalankan server menggunakan salah satu cara berikut:
 
 ### Cara 1 — Mode Development (Direkomendasikan)
 
@@ -332,15 +314,15 @@ http://127.0.0.1:8000
 
 ---
 
-## 📖 Panduan Penggunaan
+## Panduan Penggunaan
 
-### 1. 🏠 Halaman Beranda (Landing Page)
+### 1. Halaman Beranda
 
 Saat pertama kali membuka aplikasi, Anda akan melihat halaman beranda dengan informasi singkat tentang platform dan tombol **Login** / **Daftar**.
 
 ---
 
-### 2. 📝 Registrasi & Login
+### 2. Registrasi & Login
 
 1. Klik tombol **"Daftar"** di pojok kanan atas.
 2. Isi form pendaftaran:
@@ -352,11 +334,11 @@ Saat pertama kali membuka aplikasi, Anda akan melihat halaman beranda dengan inf
 3. Setelah berhasil mendaftar, Anda akan otomatis diarahkan ke Dashboard.
 4. Untuk login berikutnya, klik **"Masuk"** dan isi email & password.
 
-> **Edit Profil:** Klik ikon avatar di pojok kanan atas → pilih **"Edit Profil"** untuk memperbarui nama, email, foto profil, atau kata sandi.
+> **Edit Profil:** Klik ikon avatar di pojok kanan atas, pilih **"Edit Profil"** untuk memperbarui nama, email, foto profil, atau kata sandi.
 
 ---
 
-### 3. 📊 Dashboard Lahan
+### 3. Dashboard Lahan
 
 Setelah login, Anda akan masuk ke Dashboard yang menampilkan:
 
@@ -366,7 +348,7 @@ Setelah login, Anda akan masuk ke Dashboard yang menampilkan:
 
 ---
 
-### 4. ➕ Menambah Lahan Baru & Analisis
+### 4. Menambah Lahan Baru & Analisis
 
 1. Klik tombol **"Tambah Lahan Baru"** di Dashboard.
 2. Isi form data lahan:
@@ -388,13 +370,13 @@ Setelah login, Anda akan masuk ke Dashboard yang menampilkan:
    | Fase Pertumbuhan | — | Vegetative |
 
 3. Klik **"Simpan Data Lahan"**.
-4. Sistem akan **otomatis menjalankan ML Engine** (K-Means + Random Forest) untuk menghasilkan:
+4. Sistem akan otomatis menjalankan ML Engine (K-Means + Random Forest) untuk menghasilkan:
    - Zonasi Tanah (Cluster)
    - Jenis Pupuk yang Direkomendasikan
 
 ---
 
-### 5. 🔍 Detail Lahan & Kalender Pemupukan
+### 5. Detail Lahan & Kalender Pemupukan
 
 Klik **"Lihat Detail"** pada salah satu lahan untuk melihat:
 
@@ -407,7 +389,7 @@ Klik **"Lihat Detail"** pada salah satu lahan untuk melihat:
 
 ---
 
-### 6. ⚖️ Bandingkan Lahan
+### 6. Bandingkan Lahan
 
 1. Klik menu **"Compare"** di navigasi atas.
 2. Pilih **dua lahan** dari dropdown yang tersedia.
@@ -416,19 +398,19 @@ Klik **"Lihat Detail"** pada salah satu lahan untuk melihat:
 
 ---
 
-### 7. 🎨 Pengaturan Tema & Bahasa
+### 7. Pengaturan Tema & Bahasa
 
-Klik ikon avatar → **"Settings"**:
+Klik ikon avatar, lalu pilih **"Settings"**:
 
 - **Tema:** Beralih antara **Dark Mode** dan **Light Mode**
 - **Bahasa:** Pilih **Bahasa Indonesia (ID)** atau **English (EN)**
 
 ---
 
-## 📁 Struktur Proyek
+## Struktur Proyek
 
 ```
-VESTNOOK/
+vestnook/
 ├── app/
 │   ├── Http/
 │   │   └── Controllers/
@@ -462,12 +444,12 @@ VESTNOOK/
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 
 Proyek ini dikembangkan untuk keperluan akademis — **Tugas Akhir / UAS Pemrograman Web Framework, Semester 4**.
 
 ---
 
 <p align="center">
-  Dibuat dengan menggunakan <strong>Laravel</strong> + <strong>Python ML</strong> + <strong>Google Gemini AI</strong>
+  Dibuat menggunakan <strong>Laravel</strong> + <strong>Python ML</strong> + <strong>Google Gemini AI</strong>
 </p>
