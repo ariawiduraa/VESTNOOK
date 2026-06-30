@@ -94,7 +94,7 @@ Ikuti langkah-langkah berikut secara berurutan. Langkah 1 berlaku untuk semua si
 ### Langkah 1 — Clone Repositori
 
 ```bash
-git clone <URL_REPOSITORI_ANDA> vestnook
+git clone https://github.com/ariawiduraa/VESTNOOK.git
 cd vestnook
 ```
 
