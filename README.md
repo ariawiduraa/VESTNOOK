@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/VESTNOOK-v2.0-4CAF50?style=for-the-badge&logo=leaf&logoColor=white" alt="VESTNOOK v2">
+  <img src="https://img.shields.io/badge/VESTNOOK-v2.0-4CAF50?style=for-the-badge&logo=leaf&logoColor=white" alt="VESTNOOK">
   <img src="https://img.shields.io/badge/Laravel-13.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
   <img src="https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/AI_Powered-Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI">
 </p>
 
-<h1 align="center">🌾 VESTNOOK V2 — Smart Farming Platform</h1>
+<h1 align="center">VESTNOOK — Smart Farming Platform</h1>
 
 <p align="center">
   Platform manajemen lahan pertanian berbasis <strong>Machine Learning & AI</strong> yang membantu petani menganalisis kondisi tanah, mendapatkan rekomendasi pupuk yang tepat, dan merencanakan jadwal pemupukan secara otomatis.
@@ -20,17 +20,15 @@
 - [Tech Stack](#-tech-stack)
 - [Prasyarat Sistem](#-prasyarat-sistem)
 - [Instalasi](#-instalasi)
-- [Konfigurasi](#-konfigurasi)
 - [Menjalankan Aplikasi](#-menjalankan-aplikasi)
 - [Panduan Penggunaan](#-panduan-penggunaan)
 - [Struktur Proyek](#-struktur-proyek)
-- [Troubleshooting](#-troubleshooting)
 
 ---
 
 ## 🌿 Tentang Proyek
 
-**VESTNOOK V2** adalah aplikasi web *Smart Farming* yang mengintegrasikan teknologi Machine Learning (K-Means Clustering & Random Forest) dengan kecerdasan buatan Google Gemini untuk memberikan:
+**VESTNOOK** adalah aplikasi web *Smart Farming* yang mengintegrasikan teknologi Machine Learning (K-Means Clustering & Random Forest) dengan kecerdasan buatan Google Gemini untuk memberikan:
 
 - **Analisis tanah** berdasarkan parameter fisik dan kimia
 - **Rekomendasi pupuk** yang dipersonalisasi per lahan
@@ -78,38 +76,62 @@ Pastikan semua perangkat lunak berikut sudah terinstal di sistem Anda sebelum me
 | **Composer** | 2.x | `composer -V` |
 | **Node.js** | 18+ | `node -v` |
 | **NPM** | 9+ | `npm -v` |
-| **Python** | 3.8 – 3.11 | `python3 --version` |
-| **pip** | terbaru | `pip3 --version` |
+| **Python** | 3.8 – 3.11 | `python3 --version` (Linux/Mac) / `python --version` (Windows) |
+| **pip** | terbaru | `pip3 --version` (Linux/Mac) / `pip --version` (Windows) |
 | **Git** | terbaru | `git --version` |
 
-> **Catatan:** SQLite biasanya sudah tersedia secara bawaan di Linux/macOS. Untuk Windows, pastikan driver SQLite PHP aktif di `php.ini`.
+> **Catatan:** SQLite sudah tersedia secara bawaan di Linux/macOS. Untuk Windows, gunakan **XAMPP** / **Laragon** yang sudah menyertakan PHP + SQLite secara otomatis.
 
 ---
 
 ## 🚀 Instalasi
 
-Ikuti langkah-langkah berikut secara berurutan untuk menyiapkan proyek.
+Ikuti langkah-langkah berikut secara berurutan untuk menyiapkan proyek. Setiap langkah mencakup perintah untuk **Windows**, **macOS**, dan **Linux**.
+
+---
 
 ### Langkah 1 — Clone Repositori
 
+> Jika Anda sudah memiliki folder proyeknya, lewati bagian clone dan langsung masuk ke direktori proyek.
+
+**🪟 Windows (Command Prompt / PowerShell):**
+```powershell
+git clone <URL_REPOSITORI_ANDA> vestnook-v2
+cd vestnook-v2
+```
+
+**🍎 macOS / 🐧 Linux (Terminal):**
 ```bash
 git clone <URL_REPOSITORI_ANDA> vestnook-v2
 cd vestnook-v2
 ```
 
-Atau, jika Anda sudah memiliki folder proyeknya, masuk ke direktori proyek:
+Jika folder sudah ada, masuk langsung ke direktorinya:
 
+**🪟 Windows:**
+```powershell
+cd "C:\path\ke\folder\VESTNOOK"
+```
+
+**🍎 macOS / 🐧 Linux:**
 ```bash
-cd "/path/ke/folder/VESTNOOK V2"
+cd "/path/ke/folder/VESTNOOK"
 ```
 
 ---
 
 ### Langkah 2 — Instal Dependensi PHP (Backend)
 
+Perintah ini sama di semua sistem operasi:
+
 ```bash
 composer install
 ```
+
+> **Belum punya Composer?**
+> - **Windows:** Unduh installer di [https://getcomposer.org/Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe)
+> - **macOS:** `brew install composer`
+> - **Linux (Ubuntu/Debian):** `sudo apt install composer`
 
 ---
 
@@ -117,11 +139,17 @@ composer install
 
 Salin file environment contoh:
 
+**🪟 Windows (Command Prompt):**
+```cmd
+copy .env.example .env
+```
+
+**🍎 macOS / 🐧 Linux:**
 ```bash
 cp .env.example .env
 ```
 
-Buka file `.env` yang baru dibuat, kemudian sesuaikan konfigurasi berikut:
+Buka file `.env` dengan text editor, lalu sesuaikan konfigurasi berikut:
 
 ```env
 APP_NAME="VESTNOOK Smart Farming"
@@ -145,6 +173,8 @@ GEMINI_API_KEY="MASUKKAN_API_KEY_GEMINI_ANDA_DI_SINI"
 
 ### Langkah 4 — Generate Application Key
 
+Perintah ini sama di semua sistem operasi:
+
 ```bash
 php artisan key:generate
 ```
@@ -153,13 +183,23 @@ php artisan key:generate
 
 ### Langkah 5 — Setup Database & Migrasi
 
-Buat file database SQLite dan jalankan semua migrasi:
+Buat file database SQLite kosong, lalu jalankan migrasi:
 
+**🪟 Windows (Command Prompt):**
+```cmd
+type nul > database\database.sqlite
+php artisan migrate
+```
+
+**🪟 Windows (PowerShell):**
+```powershell
+New-Item -Path database\database.sqlite -ItemType File -Force
+php artisan migrate
+```
+
+**🍎 macOS / 🐧 Linux:**
 ```bash
-# Buat file database SQLite
 touch database/database.sqlite
-
-# Jalankan migrasi tabel
 php artisan migrate
 ```
 
@@ -167,67 +207,89 @@ php artisan migrate
 
 ### Langkah 6 — Instal Dependensi Frontend & Build Aset
 
+Perintah ini sama di semua sistem operasi:
+
 ```bash
 npm install
 npm run build
 ```
+
+> **Belum punya Node.js?** Unduh di [https://nodejs.org](https://nodejs.org) (pilih versi LTS).
 
 ---
 
 ### Langkah 7 — Instal Dependensi Python (ML Engine)
 
-```bash
-# Masuk ke folder ML Engine
+Masuk ke folder ML Engine dan instal library yang dibutuhkan:
+
+**🪟 Windows (Command Prompt / PowerShell):**
+```cmd
 cd ml_engine
-
-# Instal library Python yang dibutuhkan
-pip3 install joblib pandas numpy scikit-learn
-
-# Kembali ke folder utama proyek
+pip install joblib pandas numpy scikit-learn
 cd ..
 ```
+
+**🍎 macOS / 🐧 Linux:**
+```bash
+cd ml_engine
+pip3 install joblib pandas numpy scikit-learn
+cd ..
+```
+
+> **Belum punya Python?**
+> - **Windows:** Unduh di [https://www.python.org/downloads](https://www.python.org/downloads) — centang **"Add Python to PATH"** saat instalasi.
+> - **macOS:** `brew install python3`
+> - **Linux (Ubuntu/Debian):** `sudo apt install python3 python3-pip`
 
 Pastikan file model berikut sudah ada di dalam folder `ml_engine/`:
 
 ```
 ml_engine/
-├── kmeans_smart_farming.joblib        ✅ Model K-Means Clustering
-├── scaler_smart_farming.joblib        ✅ Scaler untuk K-Means
-├── cluster_label_map.joblib           ✅ Peta label cluster
-├── preprocessor_smart_farming_v2.joblib ✅ Preprocessor untuk Random Forest
-├── random_forest_model.joblib         ✅ Model Random Forest
-└── label_encoder_target_v2.joblib     ✅ Label encoder target
+├── kmeans_smart_farming.joblib           ✅ Model K-Means Clustering
+├── scaler_smart_farming.joblib           ✅ Scaler untuk K-Means
+├── cluster_label_map.joblib              ✅ Peta label cluster
+├── preprocessor_smart_farming_v2.joblib  ✅ Preprocessor untuk Random Forest
+├── random_forest_model.joblib            ✅ Model Random Forest
+└── label_encoder_target_v2.joblib        ✅ Label encoder target
 ```
 
 > **Jika file model belum ada**, jalankan skrip pelatihan:
+>
+> *Windows:*
+> ```cmd
+> cd ml_engine && python train.py && cd ..
+> ```
+> *macOS / Linux:*
 > ```bash
-> cd ml_engine
-> python3 train.py
-> cd ..
+> cd ml_engine && python3 train.py && cd ..
 > ```
 
 ---
 
-### ✅ Ringkasan Perintah Instalasi (Semua Sekaligus)
+### ✅ Ringkasan Perintah Instalasi
 
-```bash
-# 1. Salin .env
-cp .env.example .env
-
-# 2. Instal semua dependensi
+**🪟 Windows (Command Prompt):**
+```cmd
+copy .env.example .env
 composer install
+php artisan key:generate
+type nul > database\database.sqlite
+php artisan migrate
 npm install
+npm run build
+cd ml_engine && pip install joblib pandas numpy scikit-learn && cd ..
+```
 
-# 3. Generate key & setup database
+**🍎 macOS / 🐧 Linux:**
+```bash
+cp .env.example .env
+composer install
 php artisan key:generate
 touch database/database.sqlite
 php artisan migrate
-
-# 4. Build aset frontend
+npm install
 npm run build
-
-# 5. Instal dependensi Python
-pip3 install joblib pandas numpy scikit-learn
+cd ml_engine && pip3 install joblib pandas numpy scikit-learn && cd ..
 ```
 
 ---
@@ -366,7 +428,7 @@ Klik ikon avatar → **"Settings"**:
 ## 📁 Struktur Proyek
 
 ```
-VESTNOOK V2/
+VESTNOOK/
 ├── app/
 │   ├── Http/
 │   │   └── Controllers/
@@ -400,85 +462,6 @@ VESTNOOK V2/
 
 ---
 
-## 🔧 Troubleshooting
-
-### ❌ Error: `python3: not found` saat Analisis Lahan
-
-Pastikan Python 3 terinstal di sistem Anda:
-```bash
-# Cek instalasi Python
-python3 --version
-
-# Jika belum ada (Ubuntu/Debian)
-sudo apt update && sudo apt install python3 python3-pip
-```
-
----
-
-### ❌ Error: `Class not found` atau `Autoload error`
-
-Regenerasi autoload Composer:
-```bash
-composer dump-autoload
-```
-
----
-
-### ❌ Error: Halaman menampilkan 500 Internal Server Error
-
-Cek log error Laravel:
-```bash
-tail -f storage/logs/laravel.log
-```
-
-Bersihkan cache aplikasi:
-```bash
-php artisan config:clear
-php artisan cache:clear
-php artisan view:clear
-php artisan route:clear
-```
-
----
-
-### ❌ Error: Database tidak ditemukan / tabel belum ada
-
-```bash
-# Pastikan file SQLite ada
-touch database/database.sqlite
-
-# Ulangi migrasi
-php artisan migrate:fresh
-```
-
----
-
-### ❌ Aset CSS/JS tidak muncul (halaman tanpa style)
-
-```bash
-# Rebuild aset frontend
-npm run build
-```
-
-Pastikan file `public/build/manifest.json` sudah terbuat setelah perintah di atas.
-
----
-
-### ❌ Kalender AI tidak muncul / error Gemini
-
-Pastikan `GEMINI_API_KEY` sudah diisi dengan benar di file `.env`:
-```bash
-# Cek apakah key sudah tersimpan
-grep GEMINI_API_KEY .env
-```
-
-Setelah mengubah `.env`, bersihkan cache config:
-```bash
-php artisan config:clear
-```
-
----
-
 ## 📄 Lisensi
 
 Proyek ini dikembangkan untuk keperluan akademis — **Tugas Akhir / UAS Pemrograman Web Framework, Semester 4**.
@@ -486,5 +469,5 @@ Proyek ini dikembangkan untuk keperluan akademis — **Tugas Akhir / UAS Pemrogr
 ---
 
 <p align="center">
-  Dibuat dengan ❤️ menggunakan <strong>Laravel</strong> + <strong>Python ML</strong> + <strong>Google Gemini AI</strong>
+  Dibuat dengan menggunakan <strong>Laravel</strong> + <strong>Python ML</strong> + <strong>Google Gemini AI</strong>
 </p>
